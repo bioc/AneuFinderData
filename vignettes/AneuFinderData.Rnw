@@ -1,0 +1,63 @@
+%\VignetteIndexEntry{Example data for AneuFinder}
+%\VignetteEngine{knitr::knitr}
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{plainnat}
+
+\newcommand{\scscst}{\scriptscriptstyle}
+\newcommand{\scst}{\scriptstyle}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Roption}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+
+\author{Aaron Taudt\footnote{aaron.taudt@gmail.com}}
+\begin{document}
+\title{Example data for AneuFinder}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+This package provides data for demonstration purposes in package \Rpackage{AneuFinder}. It contains several BAM and BED files to illustrate the \Rpackage{AneuFinder} workflow, and results in the form of \Robject{aneuHMM} objects to illustrate plotting capabilities. The following sequencing experiments are included:
+\begin{scriptsize}
+<<>>==
+library(AneuFinderData)
+?primary_lung
+?metastasis_liver
+?BB150803_IV_074
+?KK150311_VI_07
+?hg19_diploid
+@
+\end{scriptsize}
+
+They are supposed to be read or loaded from file. Paths can be obtained in the following way:
+\begin{scriptsize}
+<<>>==
+## Primary lung data
+path <- system.file("extdata", "primary-lung", "hmms", package="AneuFinderData")
+files <- list.files(path, full.names=TRUE)
+head(files)
+## Liver metastasis data
+path <- system.file("extdata", "metastasis-liver", "hmms", package="AneuFinderData")
+files <- list.files(path, full.names=TRUE)
+head(files)
+## Example BAM and BED files
+file <- system.file("extdata", "BB150803_IV_074.bam", package="AneuFinderData")
+print(file)
+file <- system.file("extdata", "KK150311_VI_07.bam.bed.gz", package="AneuFinderData")
+print(file)
+file <- system.file("extdata", "hg19_diploid.bam.bed.gz", package="AneuFinderData")
+print(file)
+@
+\end{scriptsize}
+
+\end{document}
+
