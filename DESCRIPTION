@@ -1,7 +1,7 @@
 Package: AneuFinderData
 Type: Package
 Title: WGSCS Data for Demonstration Purposes
-Version: 1.37.0
+Version: 1.37.1
 Date: 2016-12
 Author: Aaron Taudt
 Maintainer: Aaron Taudt <aaron.taudt@gmail.com>
@@ -13,3 +13,4 @@ biocViews: CopyNumberVariationData, LungCancerData, Homo_sapiens_Data,
         SequencingData
 NeedsCompilation: no
 RoxygenNote: 5.0.1
+PackageStatus: Deprecated
